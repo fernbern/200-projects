@@ -4,3 +4,4 @@ if(number > 5) {
 } else {
     document.write('wrong answer');
 }
+const modal = document.querySelector('modal');
