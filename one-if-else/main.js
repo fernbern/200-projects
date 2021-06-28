@@ -5,3 +5,6 @@ if(number > 5) {
     document.write('wrong answer');
 }
 const modal = document.querySelector('modal');
+function testing() {
+    console.write('epicness');
+}
