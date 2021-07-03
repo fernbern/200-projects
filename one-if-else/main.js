@@ -8,3 +8,4 @@ const modal = document.querySelector('modal');
 function testing() {
     console.write('epicness');
 }
+map();
