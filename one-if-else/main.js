@@ -9,3 +9,7 @@ function testing() {
     console.write('epicness');
 }
 map(); map(); find();
+const filtering () {
+    let number = 55;
+    return number * 7;
+}
