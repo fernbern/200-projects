@@ -13,3 +13,4 @@ const filtering () {
     let number = 55;
     return number * 7;
 }
+console.log(this);
