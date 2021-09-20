@@ -1,0 +1,89 @@
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font: 400 16px helvetica,sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+  }
+  
+  header {
+    text-align: center;
+    padding: 40px 0 100px 0;
+    background: #037ef3;
+  }
+  
+  /* angled div */
+  .slanted-div {
+    position: relative;
+    padding: 200px 0;
+    background: #003666;
+    overflow: visible;
+    z-index: 1;
+  }
+  
+  /* where the magic happens */
+  .slanted-div:before, .slanted-div:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    transform-origin: right top;
+    transform: skewY(-3deg);
+  }
+  
+  .slanted-div:after {
+    bottom: 0;
+    transform-origin: right bottom;
+    transform: skewY(3deg);
+  }
+  
+  /* displays the content inside, as these settings in the parent breaks the effect */
+  .slanted-div div {
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 1.5;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 100px 0 50px 0;
+    background: #161616;
+  }
+  
+  h1 {
+    font-size: 2em;
+    font-weight: 400;
+    margin: 0;
+  }
+  
+  /* responsive */
+  @media only screen
+  and (max-width : 720px) {
+    
+    header {
+      padding: 30px 30px 50px 30px;
+    }
+  
+    .slanted-div {
+      padding: 100px 0;
+    }
+    
+    footer {
+      padding: 65px 0 50px 0;
+    }
+      
+    h1 {
+      font-size: 1.5em;
+    }
+  
+  }
+  
