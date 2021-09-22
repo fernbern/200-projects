@@ -66,3 +66,37 @@ function whatsThis() {
 whatsThis();
 whatsThis.call(obj);
 whatsThis.apply(obj);
+class Car {
+    constructor() {
+        this.sayBye = this.sayBye.bind(this);
+    }
+    sayHi() {
+        console.log(`Hello from ${this.name}`);
+    }
+    get name() {
+        return 'Fernando'
+    }
+}
+class Bird {
+    get name() {
+        return 'Twenty';
+    }
+}
+function sum() {
+    return this.a +this.b + this.c;
+}
+var o = {
+    a: 1, b: 2, c: 3,
+    get average() {
+        return (this.a + this.b + this.c) / 3;
+    }
+};
+Object.defineProperty(o, 'sum', {
+    get: sum, enumerable: true, configurable: true
+});
+console.log(o.average, o.sum);
+var o = {f: function() { return this.a + this.b}};
+var p = Object.create(o);
+p.a = 1;
+p.b = 4;
+console.log(p.f()); // 5
