@@ -29,3 +29,40 @@ var globals = getGlobal();
 if(typeof globals.setTimeout !== 'function'){
     // no netTimeout in this envirenment
 }
+function f1() {
+    'use struct';
+    return this;
+}
+f1() === undefined;
+class Example {
+    constructor() {
+        const proto = Object.getPrototypeOf(this);
+        console.log(Object.getOwnPropertyNames(proto));
+    }
+    first(){}
+    second(){}
+}
+new Example();
+this = new Base();
+class Base {}
+class Good extends Base {}
+class AlsoGood extends Base {
+    constructor() {
+        return {a: 5}
+    }
+}
+class Bad extends Base {
+    constructor(){}
+}
+new Good();
+new AlsoGood();
+new Bad(); // Reference Error
+// this in function context
+var obj = {a: 'Custom'};
+var a = 'Global';
+function whatsThis() {
+    return this.a;
+}
+whatsThis();
+whatsThis.call(obj);
+whatsThis.apply(obj);
