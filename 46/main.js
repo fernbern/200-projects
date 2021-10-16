@@ -15,3 +15,4 @@ div3.addEventListener('click', function(){
 btn.addEventListener('click', function(){
     document.body.style.backgroundColor = 'yellow';
 })
+map(); filter(); reduce();
